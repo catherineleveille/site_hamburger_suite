@@ -9,9 +9,47 @@
 
 }
 
+.sub-grid {
+  /***zone areas= grille de 4X4 ex.: premiere ligne= header, 2e ligne=title, 3e ligne aside,image, ect.  ****/
 
 
-@media screen and (min-width: $vw-large){
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(100px, min-content);
+
+  grid-template-areas:
+  'header header  header   header'
+  'title  title   title    title'
+  'aside  image   image    description'
+  'aside  gallery gallery  gallery';
+
+}
+/*** le menu prend toute la place en haut****/
+.grid-header{
+  grid-area:header;
+}
+/*** le titre prend toute la place de la 2e rangée****/
+.grid-intro{
+  grid-area: title;
+}
+.grid-aside{
+  grid-area: aside;
+}
+.grid-image{
+  grid-area: image;
+}
+.grid-description{
+  grid-area: description;
+}
+.grid-gallery{
+  grid-area: gallery;
+}
+
+
+
+
+
+@media screen and (min-width: $vw-large) {
   .main-grid {
     grid-auto-flow: column;
     grid-template-columns: 500px 1fr 500px;
@@ -32,23 +70,24 @@
     grid-column: 1 / span 3;
   }
 
-  .col-2-left{
+  .col-2-left {
     grid-column: 1/2;
   }
 
-  .col-3-right{
+  .col-3-right {
     grid-column: 2/4;
   }
 
-  .col-2-right{
+  .col-2-right {
     grid-column: 3/4;
   }
 
-  .col-3-left{
+  .col-3-left {
     grid-column: 1/3;
   }
 }
-@media screen and (min-width: $vw-huge){
+
+@media screen and (min-width: $vw-huge) {
   .main-grid {
     grid-template-columns: 600px 1fr 600px;
   }
