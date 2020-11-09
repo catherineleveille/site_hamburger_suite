@@ -22,3 +22,28 @@
 .intro h1 span{
   display: block;
 }
+.sub-intro{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+
+  .main-title{
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+
+    &::after{
+      display: block;
+      content: "";
+      width: 120%;
+      height: 10px;
+      margin-left: -10%;
+      background-color: var(--color-text-primary);
+    }
+
+  }
+}
+/*pseudo élément= tjrs mettre content & display:block + un élément en ligne= on ne peut pas jouer avec les dimensions DONC  display block*/
+/*display:inline=changer la grandeur */
+/*SI ON CHANGE LA DIRECTION POUR COLUMNS=ALIGN ITEMS*/
+/*margin negatif+width qui depasse 100%= élargir le content */

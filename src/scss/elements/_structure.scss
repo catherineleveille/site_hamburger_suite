@@ -12,10 +12,11 @@
 .sub-grid {
   /***zone areas= grille de 4X4 ex.: premiere ligne= header, 2e ligne=title, 3e ligne aside,image, ect.  ****/
 
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 70px ;
   grid-auto-rows: minmax(100px, min-content);
+
 
   grid-template-areas:
   'header header  header   header'
